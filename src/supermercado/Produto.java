@@ -1,7 +1,9 @@
 package supermercado;
 
-public abstract class Produto {
+import java.io.Serializable;
+public abstract class Produto implements Serializable {
     //Atributos
+    private static final long serialVersionUID = 1L; //nao sei
     private int codigo;
     private String nome;
     private String fornecedo;

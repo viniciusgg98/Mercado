@@ -1,6 +1,10 @@
 package supermercado;
 
 public class Laticinio extends Produto{
+    
+    //nao sei
+    private static final long serialVersionUID = 1L;
+    
     //Construtor
     public Laticinio(int codigo, String nome, String fornecedo, float preco) {
         super(codigo, nome, fornecedo, preco);
