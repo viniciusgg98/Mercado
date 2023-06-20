@@ -1,9 +1,12 @@
 package supermercado;
 
 public class Limpeza extends Produto{
+    
+    //nao sei
+    private static final long serialVersionUID = 1L;
 
     //Construtor
-    public Limpeza(int codigo, String nome, String fornecedo, float preco) {
+    public Limpeza(int codigo, String nome, String fornecedo, double preco) {
         super(codigo, nome, fornecedo, preco);
         this.setTipo("Limpeza");
     }

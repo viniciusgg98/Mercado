@@ -1,11 +1,13 @@
 package supermercado;
 
-public abstract class Produto {
+import java.io.Serializable;
+public abstract class Produto implements Serializable {
     //Atributos
+    private static final long serialVersionUID = 1L; //nao sei
     private int codigo;
     private String nome;
     private String fornecedo;
-    private float preco;
+    private double preco;
     protected String tipo;
     
 
@@ -13,7 +15,7 @@ public abstract class Produto {
     public abstract int Validade();
 
     //Construtor
-    public Produto(int codigo, String nome, String fornecedo, float preco) {
+    public Produto(int codigo, String nome, String fornecedo, double preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.fornecedo = fornecedo;
@@ -23,7 +25,7 @@ public abstract class Produto {
     //Status
     @Override
     public String toString() {
-        return "PRODUTO\n CÓDIGO: " + codigo + "\nNOME: " + nome + "\nFORNECEDOR: " + fornecedo + "\nPREÇO: " + preco + "\nTIPO: " + tipo + "\nVALIDADE DEPOIS DE ABERTO: " + Validade() + " dias"; //Desconto metodo 
+        return "\nPRODUTO\n\nCÓDIGO: " + codigo + "\nNOME: " + nome + "\nFORNECEDOR: " + fornecedo + "\nPREÇO: " + preco + "\nTIPO: " + tipo + "\nVALIDADE DEPOIS DE ABERTO: " + Validade() + " dias\n"; 
     } 
     
     //Getters and Setters
@@ -45,10 +47,10 @@ public abstract class Produto {
     public void setFornecedo(String fornecedo) {
         this.fornecedo = fornecedo;
     }
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
     public String getTipo() {
