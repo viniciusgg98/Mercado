@@ -6,7 +6,7 @@ public class Bebida extends Produto {
     private static final long serialVersionUID = 1L;
     
     //Construtor
-    public Bebida(int codigo, String nome, String fornecedo, float preco) {
+    public Bebida(int codigo, String nome, String fornecedo, double preco) {
         super(codigo, nome, fornecedo, preco);
         this.setTipo("Bebida");
     }
