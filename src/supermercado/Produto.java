@@ -25,7 +25,7 @@ public abstract class Produto implements Serializable {
     //Status
     @Override
     public String toString() {
-        return "\nPRODUTO\n\nCÓDIGO: " + codigo + "\nNOME: " + nome + "\nFORNECEDOR: " + fornecedo + "\nPREÇO: " + preco + "\nTIPO: " + tipo + "\nVALIDADE DEPOIS DE ABERTO: " + Validade() + " dias\n"; 
+        return "\nPRODUTO\n" + "\nCÓDIGO: " + codigo + "\nTIPO: " + tipo + "\nNOME: " + nome + "\nFORNECEDOR: " + fornecedo + "\nR$: " + preco +  "\nVALIDADE DEPOIS DE ABERTO: " + Validade() + " dias\n"; 
     } 
     
     //Getters and Setters
