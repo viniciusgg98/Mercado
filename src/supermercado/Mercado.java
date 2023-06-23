@@ -84,15 +84,25 @@ public class Mercado {
 		return Integer.parseInt(entrada);
 	}
 
-	public int retornaDouble(String entrada) { // retorna um valor flutuante
-		double numDoub;
-
-		//Enquanto não for possível converter o valor de entrada para flutuante, permanece no loop
-		while (!this.intValido(entrada)) {
-			entrada = JOptionPane.showInputDialog(null, "Valor incorreto!\n\nDigite um número inteiro ou flotuante.");
+	private boolean doubleValido(String s) {
+		try {
+			Double.parseDouble(s); // Método estético, que tenta tranformar uma string em inteiro
+			return true;
+		} catch (NumberFormatException e) { // Não conseguiu tranformar em inteiro e gera erro
+			return false;
 		}
-		return Integer.parseInt(entrada);
 	}
+
+	public double retornaDouble(String entrada) { // retorna um valor flutuante
+		double numDouble;
+
+		// Enquanto não for possível converter o valor de entrada para double, permanece no loop
+		while (!this.doubleValido(entrada)) {
+			entrada = JOptionPane.showInputDialog(null, "Valor incorreto!\n\nDigite o preço do produto.");
+		}
+		return Double.parseDouble(entrada);
+	}
+	
 
 	public void salvaProdutos (ArrayList<Produto> produtos){
 		ObjectOutputStream outputStream = null;
@@ -202,7 +212,7 @@ public class Mercado {
 				}
 				String dados = "";
 				for (int i=0; i < produtos.size(); i++)	{
-					dados += produtos.get(i).toString() + "---------------\n";
+					dados += produtos.get(i).toString() + "\n---------------\n";
 				}
 				JOptionPane.showMessageDialog(null,dados);
 				break;
